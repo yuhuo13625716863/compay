@@ -33,7 +33,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.2.0"
+            "master": "1.2.0"
         },
         "gateways": [
             "AuthorizeNet_AIM",
