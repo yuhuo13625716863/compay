@@ -31,9 +31,6 @@
         "squizlabs/php_codesniffer": "~1.5"
     },
     "extra": {
-        "branch-alias": {
-            "master": "1.2.0"
-        },
         "gateways": [
             "AuthorizeNet_AIM",
             "AuthorizeNet_SIM",
