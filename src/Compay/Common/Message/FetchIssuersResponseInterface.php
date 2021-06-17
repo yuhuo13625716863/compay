@@ -3,7 +3,7 @@
  * Fetch Issuers Response interface
  */
 
-namespace Omnipay\Common\Message;
+namespace Compay\Common\Message;
 
 /**
  * Fetch Issuers Response interface
@@ -16,7 +16,7 @@ namespace Omnipay\Common\Message;
  * card issuer.
  *
  * @see ResponseInterface
- * @see Omnipay\Common\Issuer
+ * @see Compay\Common\Issuer
  */
 interface FetchIssuersResponseInterface extends ResponseInterface
 {
@@ -25,7 +25,7 @@ interface FetchIssuersResponseInterface extends ResponseInterface
      *
      * These represent banks which the user must choose between.
      *
-     * @return \Omnipay\Common\Issuer[]
+     * @return \Compay\Common\Issuer[]
      */
     public function getIssuers();
 }

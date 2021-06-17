@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
-use Omnipay\Common\Currency;
-use Omnipay\Tests\TestCase;
+use Compay\Common\Currency;
+use Compay\Tests\TestCase;
 
 class CurrencyTest extends TestCase
 {

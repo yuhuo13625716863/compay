@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 use Mockery as m;
-use Omnipay\Tests\TestCase;
+use Compay\Tests\TestCase;
 
 class HelperTest extends TestCase
 {
@@ -57,7 +57,7 @@ class HelperTest extends TestCase
 
     public function testInitializeCallsSetters()
     {
-        $target = m::mock('\Omnipay\Common\CreditCard');
+        $target = m::mock('\Compay\Common\CreditCard');
         $target->shouldReceive('setName')->once()->with('adrian');
         $target->shouldReceive('setNumber')->once()->with('1234');
 
@@ -66,7 +66,7 @@ class HelperTest extends TestCase
 
     public function testInitializeIgnoresInvalidParameters()
     {
-        $target = m::mock('\Omnipay\Common\CreditCard');
+        $target = m::mock('\Compay\Common\CreditCard');
         $target->shouldReceive('setName')->once()->with('adrian');
 
         Helper::initialize($target, array('name' => 'adrian', 'extra' => 'invalid'));
@@ -74,25 +74,25 @@ class HelperTest extends TestCase
 
     public function testGetGatewayShortNameSimple()
     {
-        $shortName = Helper::getGatewayShortName('Omnipay\\Stripe\\Gateway');
+        $shortName = Helper::getGatewayShortName('Compay\\Stripe\\Gateway');
         $this->assertSame('Stripe', $shortName);
     }
 
     public function testGetGatewayShortNameSimpleLeadingSlash()
     {
-        $shortName = Helper::getGatewayShortName('\\Omnipay\\Stripe\\Gateway');
+        $shortName = Helper::getGatewayShortName('\\Compay\\Stripe\\Gateway');
         $this->assertSame('Stripe', $shortName);
     }
 
     public function testGetGatewayShortNameUnderscore()
     {
-        $shortName = Helper::getGatewayShortName('Omnipay\\PayPal\\ExpressGateway');
+        $shortName = Helper::getGatewayShortName('Compay\\PayPal\\ExpressGateway');
         $this->assertSame('PayPal_Express', $shortName);
     }
 
     public function testGetGatewayShortNameUnderscoreLeadingSlash()
     {
-        $shortName = Helper::getGatewayShortName('\\Omnipay\\PayPal\\ExpressGateway');
+        $shortName = Helper::getGatewayShortName('\\Compay\\PayPal\\ExpressGateway');
         $this->assertSame('PayPal_Express', $shortName);
     }
 
@@ -123,13 +123,13 @@ class HelperTest extends TestCase
     public function testGetGatewayClassNameSimple()
     {
         $class = Helper::getGatewayClassName('Stripe');
-        $this->assertEquals('\\Omnipay\\Stripe\\Gateway', $class);
+        $this->assertEquals('\\Compay\\Stripe\\Gateway', $class);
     }
 
     public function testGetGatewayClassNamePartialNamespace()
     {
         $class = Helper::getGatewayClassName('PayPal\\Express');
-        $this->assertEquals('\\Omnipay\\PayPal\\ExpressGateway', $class);
+        $this->assertEquals('\\Compay\\PayPal\\ExpressGateway', $class);
     }
 
     /**
@@ -138,7 +138,7 @@ class HelperTest extends TestCase
     public function testGetGatewayClassNameUnderscoreNamespace()
     {
         $class = Helper::getGatewayClassName('PayPal_Express');
-        $this->assertEquals('\\Omnipay\\PayPal\\ExpressGateway', $class);
+        $this->assertEquals('\\Compay\\PayPal\\ExpressGateway', $class);
     }
 
     /**

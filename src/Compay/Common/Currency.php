@@ -3,14 +3,14 @@
  * Currency class
  */
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 /**
  * Currency class
  *
  * This class abstracts certain functionality around currency objects,
  * currency codes and currency numbers relating to global currencies used
- * in the Omnipay system.
+ * in the Compay system.
  */
 class Currency
 {

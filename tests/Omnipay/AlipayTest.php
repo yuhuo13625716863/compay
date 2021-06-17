@@ -1,22 +1,22 @@
 <?php
 
-namespace Alipay;
+namespace Compay;
 
 use Mockery as m;
-use Alipay\Tests\TestCase;
+use Compay\Tests\TestCase;
 
 class AlipayTest extends TestCase
 {
     public function tearDown()
     {
-        Alipay::setFactory(null);
+        Compay::setFactory(null);
     }
 
     public function testGetFactory()
     {
-        Alipay::setFactory(null);
+        Compay::setFactory(null);
 
-        $factory = Alipay::getFactory();
+        $factory = Compay::getFactory();
         $this->assertInstanceOf('Alipay\Common\GatewayFactory', $factory);
     }
 
@@ -24,9 +24,9 @@ class AlipayTest extends TestCase
     {
         $factory = m::mock('Alipay\Common\GatewayFactory');
 
-        Alipay::setFactory($factory);
+        Compay::setFactory($factory);
 
-        $this->assertSame($factory, Alipay::getFactory());
+        $this->assertSame($factory, Compay::getFactory());
     }
 
     public function testCallStatic()
@@ -34,9 +34,9 @@ class AlipayTest extends TestCase
         $factory = m::mock('Alipay\Common\GatewayFactory');
         $factory->shouldReceive('testMethod')->with('some-argument')->once()->andReturn('some-result');
 
-        Alipay::setFactory($factory);
+        Compay::setFactory($factory);
 
-        $result = Alipay::testMethod('some-argument');
+        $result = Compay::testMethod('some-argument');
         $this->assertSame('some-result', $result);
     }
 }

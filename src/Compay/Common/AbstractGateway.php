@@ -3,7 +3,7 @@
  * Base payment gateway class
  */
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 use Guzzle\Http\ClientInterface;
 use Guzzle\Http\Client as HttpClient;
@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request as HttpRequest;
  * Base payment gateway class
  *
  * This abstract class should be extended by all payment gateways
- * throughout the Omnipay system.  It enforces implementation of
+ * throughout the Compay system.  It enforces implementation of
  * the GatewayInterface interface and defines various common attibutes
  * and methods that all gateways should have.
  *
@@ -38,7 +38,7 @@ use Symfony\Component\HttpFoundation\Request as HttpRequest;
  *   }
  * </code>
  *
- * For further code examples see the *omnipay-example* repository on github.
+ * For further code examples see the *Compay-example* repository on github.
  *
  * @see GatewayInterface
  */
@@ -291,31 +291,31 @@ abstract class AbstractGateway implements GatewayInterface
      * Create and initialize a request object
      *
      * This function is usually used to create objects of type
-     * Omnipay\Common\Message\AbstractRequest (or a non-abstract subclass of it)
+     * Compay\Common\Message\AbstractRequest (or a non-abstract subclass of it)
      * and initialise them with using existing parameters from this gateway.
      *
      * Example:
      *
      * <code>
-     *   class MyRequest extends \Omnipay\Common\Message\AbstractRequest {};
+     *   class MyRequest extends \Compay\Common\Message\AbstractRequest {};
      *
-     *   class MyGateway extends \Omnipay\Common\AbstractGateway {
+     *   class MyGateway extends \Compay\Common\AbstractGateway {
      *     function myRequest($parameters) {
      *       $this->createRequest('MyRequest', $parameters);
      *     }
      *   }
      *
      *   // Create the gateway object
-     *   $gw = Omnipay::create('MyGateway');
+     *   $gw = Compay::create('MyGateway');
      *
      *   // Create the request object
      *   $myRequest = $gw->myRequest($someParameters);
      * </code>
      *
-     * @see \Omnipay\Common\Message\AbstractRequest
+     * @see \Compay\Common\Message\AbstractRequest
      * @param string $class The request class name
      * @param array $parameters
-     * @return \Omnipay\Common\Message\AbstractRequest
+     * @return \Compay\Common\Message\AbstractRequest
      */
     protected function createRequest($class, array $parameters)
     {

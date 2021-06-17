@@ -3,13 +3,13 @@
  * Cart Item Bag
  */
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 /**
  * Cart Item Bag
  *
  * This class defines a bag (multi element set or array) of single cart items
- * in the Omnipay system.
+ * in the Compay system.
  *
  * @see Item
  */

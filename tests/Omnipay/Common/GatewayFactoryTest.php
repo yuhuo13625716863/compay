@@ -1,15 +1,15 @@
 <?php
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 use Mockery as m;
-use Omnipay\Tests\TestCase;
+use Compay\Tests\TestCase;
 
 class GatewayFactoryTest extends TestCase
 {
     public static function setUpBeforeClass()
     {
-        m::mock('alias:Omnipay\\SpareChange\\TestGateway');
+        m::mock('alias:Compay\\SpareChange\\TestGateway');
     }
 
     public function setUp()
@@ -43,7 +43,7 @@ class GatewayFactoryTest extends TestCase
 
     public function testFindRegistersAvailableGateways()
     {
-        $this->factory = m::mock('Omnipay\Common\GatewayFactory[getSupportedGateways]');
+        $this->factory = m::mock('Compay\Common\GatewayFactory[getSupportedGateways]');
         $this->factory->shouldReceive('getSupportedGateways')->once()
             ->andReturn(array('SpareChange_Test'));
 
@@ -55,7 +55,7 @@ class GatewayFactoryTest extends TestCase
 
     public function testFindIgnoresUnavailableGateways()
     {
-        $this->factory = m::mock('Omnipay\Common\GatewayFactory[getSupportedGateways]');
+        $this->factory = m::mock('Compay\Common\GatewayFactory[getSupportedGateways]');
         $this->factory->shouldReceive('getSupportedGateways')->once()
             ->andReturn(array('SpareChange_Gone'));
 
@@ -68,18 +68,18 @@ class GatewayFactoryTest extends TestCase
     public function testCreateShortName()
     {
         $gateway = $this->factory->create('SpareChange_Test');
-        $this->assertInstanceOf('\\Omnipay\\SpareChange\\TestGateway', $gateway);
+        $this->assertInstanceOf('\\Compay\\SpareChange\\TestGateway', $gateway);
     }
 
     public function testCreateFullyQualified()
     {
-        $gateway = $this->factory->create('\\Omnipay\\SpareChange\\TestGateway');
-        $this->assertInstanceOf('\\Omnipay\\SpareChange\\TestGateway', $gateway);
+        $gateway = $this->factory->create('\\Compay\\SpareChange\\TestGateway');
+        $this->assertInstanceOf('\\Compay\\SpareChange\\TestGateway', $gateway);
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\RuntimeException
-     * @expectedExceptionMessage Class '\Omnipay\Invalid\Gateway' not found
+     * @expectedException \Compay\Common\Exception\RuntimeException
+     * @expectedExceptionMessage Class '\Compay\Invalid\Gateway' not found
      */
     public function testCreateInvalid()
     {

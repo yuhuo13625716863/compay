@@ -1,32 +1,32 @@
 <?php
 /**
- * Omnipay Gateway Factory class
+ * Compay Gateway Factory class
  */
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 use Guzzle\Http\ClientInterface;
-use Omnipay\Common\Exception\RuntimeException;
+use Compay\Common\Exception\RuntimeException;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 /**
- * Omnipay Gateway Factory class
+ * Compay Gateway Factory class
  *
  * This class abstracts a set of gateways that can be independently
  * registered, accessed, and used.
  *
- * Note that static calls to the Omnipay class are routed to this class by
- * the static call router (__callStatic) in Omnipay.
+ * Note that static calls to the Compay class are routed to this class by
+ * the static call router (__callStatic) in Compay.
  *
  * Example:
  *
  * <code>
  *   // Create a gateway for the PayPal ExpressGateway
  *   // (routes to GatewayFactory::create)
- *   $gateway = Omnipay::create('ExpressGateway');
+ *   $gateway = Compay::create('ExpressGateway');
  * </code>
  *
- * @see Omnipay\Omnipay
+ * @see Compay\Compay
  */
 class GatewayFactory
 {

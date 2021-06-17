@@ -3,12 +3,12 @@
  * Response interface
  */
 
-namespace Omnipay\Common\Message;
+namespace Compay\Common\Message;
 
 /**
  * Response Interface
  *
- * This interface class defines the standard functions that any Omnipay response
+ * This interface class defines the standard functions that any Compay response
  * interface needs to be able to provide.  It is an extension of MessageInterface.
  *
  * @see MessageInterface

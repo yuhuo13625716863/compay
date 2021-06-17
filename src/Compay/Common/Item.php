@@ -3,14 +3,14 @@
  * Cart Item
  */
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 /**
  * Cart Item
  *
- * This class defines a single cart item in the Omnipay system.
+ * This class defines a single cart item in the Compay system.
  *
  * @see ItemInterface
  */

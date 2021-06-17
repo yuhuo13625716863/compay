@@ -1,22 +1,22 @@
 <?php
 
-namespace Omnipay\Common\Message;
+namespace Compay\Common\Message;
 
 use Mockery as m;
-use Omnipay\Tests\TestCase;
+use Compay\Tests\TestCase;
 
 class AbstractResponseTest extends TestCase
 {
     public function setUp()
     {
-        $this->response = m::mock('\Omnipay\Common\Message\AbstractResponse')->makePartial();
+        $this->response = m::mock('\Compay\Common\Message\AbstractResponse')->makePartial();
     }
 
     public function testConstruct()
     {
         $data = array('foo' => 'bar');
         $request = $this->getMockRequest();
-        $this->response = m::mock('\Omnipay\Common\Message\AbstractResponse', array($request, $data))->makePartial();
+        $this->response = m::mock('\Compay\Common\Message\AbstractResponse', array($request, $data))->makePartial();
 
         $this->assertSame($request, $this->response->getRequest());
         $this->assertSame($data, $this->response->getData());
@@ -35,7 +35,7 @@ class AbstractResponseTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\RuntimeException
+     * @expectedException \Compay\Common\Exception\RuntimeException
      * @expectedExceptionMessage This response does not support redirection.
      */
     public function testGetRedirectResponseNotImplemented()
@@ -44,12 +44,12 @@ class AbstractResponseTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\RuntimeException
+     * @expectedException \Compay\Common\Exception\RuntimeException
      * @expectedExceptionMessage This response does not support redirection.
      */
     public function testGetRedirectResponseNotSupported()
     {
-        $this->response = m::mock('\Omnipay\Common\Message\AbstractResponseTest_MockRedirectResponse')->makePartial();
+        $this->response = m::mock('\Compay\Common\Message\AbstractResponseTest_MockRedirectResponse')->makePartial();
         $this->response->shouldReceive('isRedirect')->once()->andReturn(false);
 
         $this->response->getRedirectResponse();
@@ -57,7 +57,7 @@ class AbstractResponseTest extends TestCase
 
     public function testGetRedirectResponseGet()
     {
-        $this->response = m::mock('\Omnipay\Common\Message\AbstractResponseTest_MockRedirectResponse')->makePartial();
+        $this->response = m::mock('\Compay\Common\Message\AbstractResponseTest_MockRedirectResponse')->makePartial();
         $this->response->shouldReceive('getRedirectMethod')->andReturn('GET');
 
         $httpResponse = $this->response->getRedirectResponse();
@@ -68,7 +68,7 @@ class AbstractResponseTest extends TestCase
     public function testGetRedirectResponsePost()
     {
         $data = array('foo' => 'bar', 'key&"' => '<value>');
-        $this->response = m::mock('\Omnipay\Common\Message\AbstractResponseTest_MockRedirectResponse')->makePartial();
+        $this->response = m::mock('\Compay\Common\Message\AbstractResponseTest_MockRedirectResponse')->makePartial();
         $this->response->shouldReceive('getRedirectMethod')->andReturn('POST');
         $this->response->shouldReceive('getRedirectData')->andReturn($data);
 
@@ -80,12 +80,12 @@ class AbstractResponseTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\RuntimeException
+     * @expectedException \Compay\Common\Exception\RuntimeException
      * @expectedExceptionMessage Invalid redirect method "DELETE".
      */
     public function testGetRedirectResponseInvalidMethod()
     {
-        $this->response = m::mock('\Omnipay\Common\Message\AbstractResponseTest_MockRedirectResponse')->makePartial();
+        $this->response = m::mock('\Compay\Common\Message\AbstractResponseTest_MockRedirectResponse')->makePartial();
         $this->response->shouldReceive('getRedirectMethod')->andReturn('DELETE');
 
         $this->response->getRedirectResponse();
@@ -93,7 +93,7 @@ class AbstractResponseTest extends TestCase
 
     public function testGetTransactionIdNull()
     {
-        $this->response = m::mock('\Omnipay\Common\Message\AbstractResponseTest_MockRedirectResponse')->makePartial();
+        $this->response = m::mock('\Compay\Common\Message\AbstractResponseTest_MockRedirectResponse')->makePartial();
         $this->assertNull($this->response->getTransactionId());
     }
 }

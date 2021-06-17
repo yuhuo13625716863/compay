@@ -3,7 +3,7 @@
  * Fetch Payment Methods Response interface
  */
 
-namespace Omnipay\Common\Message;
+namespace Compay\Common\Message;
 
 /**
  * Fetch Payment Methods Response interface
@@ -16,7 +16,7 @@ namespace Omnipay\Common\Message;
  * payment method.
  *
  * @see ResponseInterface
- * @see Omnipay\Common\PaymentMethod
+ * @see Compay\Common\PaymentMethod
  */
 interface FetchPaymentMethodsResponseInterface extends ResponseInterface
 {
@@ -25,7 +25,7 @@ interface FetchPaymentMethodsResponseInterface extends ResponseInterface
      *
      * These represent separate payment methods which the user must choose between.
      *
-     * @return \Omnipay\Common\PaymentMethod[]
+     * @return \Compay\Common\PaymentMethod[]
      */
     public function getPaymentMethods();
 }

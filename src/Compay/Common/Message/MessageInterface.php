@@ -3,12 +3,12 @@
  * Message Interface
  */
 
-namespace Omnipay\Common\Message;
+namespace Compay\Common\Message;
 
 /**
  * Message Interface
  *
- * This interface class defines the standard functions that any Omnipay message
+ * This interface class defines the standard functions that any Compay message
  * interface needs to be able to provide.  
  */
 interface MessageInterface

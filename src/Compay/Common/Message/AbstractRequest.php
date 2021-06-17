@@ -3,15 +3,15 @@
  * Abstract Request
  */
 
-namespace Omnipay\Common\Message;
+namespace Compay\Common\Message;
 
 use Guzzle\Http\ClientInterface;
-use Omnipay\Common\CreditCard;
-use Omnipay\Common\Currency;
-use Omnipay\Common\Exception\InvalidRequestException;
-use Omnipay\Common\Exception\RuntimeException;
-use Omnipay\Common\Helper;
-use Omnipay\Common\ItemBag;
+use Compay\Common\CreditCard;
+use Compay\Common\Currency;
+use Compay\Common\Exception\InvalidRequestException;
+use Compay\Common\Exception\RuntimeException;
+use Compay\Common\Helper;
+use Compay\Common\ItemBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 use InvalidArgumentException;
@@ -20,7 +20,7 @@ use InvalidArgumentException;
  * Abstract Request
  *
  * This abstract class implements RequestInterface and defines a basic
- * set of functions that all Omnipay Requests are intended to include.
+ * set of functions that all Compay Requests are intended to include.
  *
  * Requests of this class are usually created using the createRequest
  * function of the gateway and then actioned using methods within this
@@ -29,16 +29,16 @@ use InvalidArgumentException;
  * Example -- creating a request:
  *
  * <code>
- *   class MyRequest extends \Omnipay\Common\Message\AbstractRequest {};
+ *   class MyRequest extends \Compay\Common\Message\AbstractRequest {};
  *
- *   class MyGateway extends \Omnipay\Common\AbstractGateway {
+ *   class MyGateway extends \Compay\Common\AbstractGateway {
  *     function myRequest($parameters) {
  *       $this->createRequest('MyRequest', $parameters);
  *     }
  *   }
  *
  *   // Create the gateway object
- *   $gw = Omnipay::create('MyGateway');
+ *   $gw = Compay::create('MyGateway');
  *
  *   // Create the request object
  *   $myRequest = $gw->myRequest($someParameters);

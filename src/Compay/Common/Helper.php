@@ -3,7 +3,7 @@
  * Helper class
  */
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 use InvalidArgumentException;
 
@@ -11,7 +11,7 @@ use InvalidArgumentException;
  * Helper class
  *
  * This class defines various static utility functions that are in use
- * throughout the Omnipay system.
+ * throughout the Compay system.
  */
 class Helper
 {
@@ -102,7 +102,7 @@ class Helper
             $className = substr($className, 1);
         }
 
-        if (0 === strpos($className, 'Omnipay\\')) {
+        if (0 === strpos($className, 'Compay\\')) {
             return trim(str_replace('\\', '_', substr($className, 8, -7)), '_');
         }
 
@@ -113,13 +113,13 @@ class Helper
      * Resolve a short gateway name to a full namespaced gateway class.
      *
      * Class names beginning with a namespace marker (\) are left intact.
-     * Non-namespaced classes are expected to be in the \Omnipay namespace, e.g.:
+     * Non-namespaced classes are expected to be in the \Compay namespace, e.g.:
      *
      *      \Custom\Gateway     => \Custom\Gateway
      *      \Custom_Gateway     => \Custom_Gateway
-     *      Stripe              => \Omnipay\Stripe\Gateway
-     *      PayPal\Express      => \Omnipay\PayPal\ExpressGateway
-     *      PayPal_Express      => \Omnipay\PayPal\ExpressGateway
+     *      Stripe              => \Compay\Stripe\Gateway
+     *      PayPal\Express      => \Compay\PayPal\ExpressGateway
+     *      PayPal_Express      => \Compay\PayPal\ExpressGateway
      *
      * @param  string  $shortName The short gateway name
      * @return string  The fully namespaced gateway class name
@@ -136,7 +136,7 @@ class Helper
             $shortName .= '\\';
         }
 
-        return '\\Omnipay\\'.$shortName.'Gateway';
+        return '\\Compay\\'.$shortName.'Gateway';
     }
 
     /**

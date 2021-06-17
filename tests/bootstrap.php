@@ -7,4 +7,4 @@ date_default_timezone_set('UTC');
 $autoloader = require __DIR__.'/../vendor/autoload.php';
 
 // autoload abstract TestCase classes in test directory
-$autoloader->add('Omnipay', __DIR__);
+$autoloader->add('Compay', __DIR__);

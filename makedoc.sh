@@ -14,7 +14,7 @@ if [ -z "$1" ]; then
 #
 elif [ "$1" = "common" ]; then
     apigen generate \
-    --title 'Omnipay Common API documentation' \
-    --source ./src/Omnipay/Common \
+    --title 'Compay Common API documentation' \
+    --source ./src/Compay/Common \
     --destination ./documents/apigen
 fi

@@ -3,12 +3,12 @@
  * Payment Method
  */
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 /**
  * Payment Method
  *
- * This class defines a payment method to be used in the Omnipay system.
+ * This class defines a payment method to be used in the Compay system.
  *
  * @see Issuer
  */

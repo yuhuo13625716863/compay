@@ -3,7 +3,7 @@
  * Redirect Response interface
  */
 
-namespace Omnipay\Common\Message;
+namespace Compay\Common\Message;
 
 /**
  * Redirect Response interface

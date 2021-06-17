@@ -3,9 +3,9 @@
  * Alipay class
  */
 
-namespace Alipay;
+namespace Compay;
 
-use Alipay\Common\GatewayFactory;
+use Compay\Common\GatewayFactory;
 
 /**
  * Alipay class
@@ -46,12 +46,12 @@ use Alipay\Common\GatewayFactory;
  * @method static array  find()
  * @method static array  getSupportedGateways()
  * @codingStandardsIgnoreStart
- * @method static \Alipay\Common\GatewayInterface create(string $class, \Guzzle\Http\ClientInterface $httpClient = null, \Symfony\Component\HttpFoundation\Request $httpRequest = null)
+ * @method static \Compay\Common\GatewayInterface create(string $class, \Guzzle\Http\ClientInterface $httpClient = null, \Symfony\Component\HttpFoundation\Request $httpRequest = null)
  * @codingStandardsIgnoreEnd
  *
  * @see Alipay\Common\GatewayFactory
  */
-class Alipay
+class Compay
 {
 
     /**

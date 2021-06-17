@@ -3,18 +3,18 @@
  * Credit Card class
  */
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 use DateTime;
 use DateTimeZone;
-use Omnipay\Common\Exception\InvalidCreditCardException;
+use Compay\Common\Exception\InvalidCreditCardException;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 /**
  * Credit Card class
  *
  * This class defines and abstracts all of the credit card types used
- * throughout the Omnipay system.
+ * throughout the Compay system.
  *
  * Example:
  *

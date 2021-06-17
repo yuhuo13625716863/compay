@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\Common\Exception;
+namespace Compay\Common\Exception;
 
-use Omnipay\Tests\TestCase;
+use Compay\Tests\TestCase;
 
 class InvalidRequestExceptionTest extends TestCase
 {

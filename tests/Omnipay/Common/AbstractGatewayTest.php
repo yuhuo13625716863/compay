@@ -1,17 +1,17 @@
 <?php
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 use Mockery as m;
-use Omnipay\Common\Message\AbstractRequest;
-use Omnipay\Tests\TestCase;
+use Compay\Common\Message\AbstractRequest;
+use Compay\Tests\TestCase;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 class AbstractGatewayTest extends TestCase
 {
     public function setUp()
     {
-        $this->gateway = m::mock('\Omnipay\Common\AbstractGateway')->makePartial();
+        $this->gateway = m::mock('\Compay\Common\AbstractGateway')->makePartial();
         $this->gateway->initialize();
     }
 
@@ -142,7 +142,7 @@ class AbstractGatewayTest extends TestCase
     {
         $this->gateway = new AbstractGatewayTest_MockAbstractGateway;
         $request = $this->gateway->callCreateRequest(
-            '\Omnipay\Common\AbstractGatewayTest_MockAbstractRequest',
+            '\Compay\Common\AbstractGatewayTest_MockAbstractRequest',
             array('currency' => 'THB')
         );
 

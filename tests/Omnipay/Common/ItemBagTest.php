@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
-use Omnipay\Tests\TestCase;
+use Compay\Tests\TestCase;
 
 class ItemBagTest extends TestCase
 {
@@ -49,7 +49,7 @@ class ItemBagTest extends TestCase
         $this->bag->add($item);
 
         $contents = $this->bag->all();
-        $this->assertInstanceOf('\Omnipay\Common\Item', $contents[0]);
+        $this->assertInstanceOf('\Compay\Common\Item', $contents[0]);
         $this->assertSame('CD-ROM', $contents[0]->getName());
     }
 

@@ -1,17 +1,17 @@
 <?php
 
-namespace Omnipay\Common\Message;
+namespace Compay\Common\Message;
 
 use Mockery as m;
-use Omnipay\Common\CreditCard;
-use Omnipay\Common\ItemBag;
-use Omnipay\Tests\TestCase;
+use Compay\Common\CreditCard;
+use Compay\Common\ItemBag;
+use Compay\Tests\TestCase;
 
 class AbstractRequestTest extends TestCase
 {
     public function setUp()
     {
-        $this->request = m::mock('\Omnipay\Common\Message\AbstractRequest')->makePartial();
+        $this->request = m::mock('\Compay\Common\Message\AbstractRequest')->makePartial();
         $this->request->initialize();
     }
 
@@ -44,7 +44,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\RuntimeException
+     * @expectedException \Compay\Common\Exception\RuntimeException
      * @expectedExceptionMessage Request cannot be modified after it has been sent!
      */
     public function testInitializeAfterRequestSent()
@@ -69,7 +69,7 @@ class AbstractRequestTest extends TestCase
         $this->assertSame($this->request, $this->request->setCard(array('number' => '1234')));
 
         $card = $this->request->getCard();
-        $this->assertInstanceOf('\Omnipay\Common\CreditCard', $card);
+        $this->assertInstanceOf('\Compay\Common\CreditCard', $card);
         $this->assertSame('1234', $card->getNumber());
     }
 
@@ -116,7 +116,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException Compay\Common\Exception\InvalidRequestException
      * @expectedExceptionMessage A zero amount is not allowed.
      */
     public function testAmountZeroNotAllowed()
@@ -126,7 +126,7 @@ class AbstractRequestTest extends TestCase
         $this->request->getAmount();
     }
 
-    // See https://github.com/thephpleague/omnipay-common/issues/69
+    // See https://github.com/thephpleague/Compay-common/issues/69
     public function testAmountPrecision()
     {
         // The default precision for PHP is 6 decimal places.
@@ -150,7 +150,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException Compay\Common\Exception\InvalidRequestException
      *
      * We still want to catch obvious fractions of the minor units that are
      * not precision errors at a much lower level.
@@ -169,7 +169,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException Compay\Common\Exception\InvalidRequestException
      */
     public function testGetAmountNoDecimalsRounding()
     {
@@ -180,7 +180,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException Compay\Common\Exception\InvalidRequestException
      */
     public function testAmountWithIntThrowsException()
     {
@@ -190,7 +190,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException Compay\Common\Exception\InvalidRequestException
      */
     public function testAmountWithIntStringThrowsException()
     {
@@ -214,7 +214,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException Compay\Common\Exception\InvalidRequestException
      */
     public function testAmountThousandsSepThrowsException()
     {
@@ -223,7 +223,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException Compay\Common\Exception\InvalidRequestException
      */
     public function testAmountInvalidFormatThrowsException()
     {
@@ -232,7 +232,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException Compay\Common\Exception\InvalidRequestException
      */
     public function testAmountInvalidTypeThrowsException()
     {
@@ -241,7 +241,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException Compay\Common\Exception\InvalidRequestException
      */
     public function testAmountNegativeStringThrowsException()
     {
@@ -250,7 +250,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException Compay\Common\Exception\InvalidRequestException
      */
     public function testAmountNegativeFloatThrowsException()
     {
@@ -325,7 +325,7 @@ class AbstractRequestTest extends TestCase
         )));
 
         $itemBag = $this->request->getItems();
-        $this->assertInstanceOf('\Omnipay\Common\ItemBag', $itemBag);
+        $this->assertInstanceOf('\Compay\Common\ItemBag', $itemBag);
 
         $items = $itemBag->all();
         $this->assertSame('Floppy Disk', $items[0]->getName());
@@ -399,7 +399,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\RuntimeException
+     * @expectedException \Compay\Common\Exception\RuntimeException
      * @expectedExceptionMessage Request cannot be modified after it has been sent!
      */
     public function testSetParameterAfterRequestSent()
@@ -419,7 +419,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\InvalidRequestException
+     * @expectedException \Compay\Common\Exception\InvalidRequestException
      */
     public function testInvalidParametersThrowsException()
     {
@@ -435,7 +435,7 @@ class AbstractRequestTest extends TestCase
 
     public function testSend()
     {
-        $response = m::mock('\Omnipay\Common\Message\ResponseInterface');
+        $response = m::mock('\Compay\Common\Message\ResponseInterface');
         $data = array('request data');
 
         $this->request->shouldReceive('getData')->once()->andReturn($data);
@@ -445,7 +445,7 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\RuntimeException
+     * @expectedException \Compay\Common\Exception\RuntimeException
      * @expectedExceptionMessage You must call send() before accessing the Response!
      */
     public function testGetResponseBeforeRequestSent()
@@ -460,7 +460,7 @@ class AbstractRequestTest extends TestCase
         $this->request->send();
 
         $response = $this->request->getResponse();
-        $this->assertInstanceOf('\Omnipay\Common\Message\ResponseInterface', $response);
+        $this->assertInstanceOf('\Compay\Common\Message\ResponseInterface', $response);
     }
 }
 
@@ -470,6 +470,6 @@ class AbstractRequestTest_MockAbstractRequest extends AbstractRequest
 
     public function sendData($data)
     {
-        $this->response = m::mock('\Omnipay\Common\Message\AbstractResponse');
+        $this->response = m::mock('\Compay\Common\Message\AbstractResponse');
     }
 }

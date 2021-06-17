@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
-use Omnipay\Tests\TestCase;
+use Compay\Tests\TestCase;
 
 class CreditCardTest extends TestCase
 {
@@ -56,7 +56,7 @@ class CreditCardTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\InvalidCreditCardException
+     * @expectedException \Compay\Common\Exception\InvalidCreditCardException
      * @expectedExceptionMessage The number parameter is required
      */
     public function testValidateNumberRequired()
@@ -66,7 +66,7 @@ class CreditCardTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\InvalidCreditCardException
+     * @expectedException \Compay\Common\Exception\InvalidCreditCardException
      * @expectedExceptionMessage The expiryMonth parameter is required
      */
     public function testValidateExpiryMonthRequired()
@@ -76,7 +76,7 @@ class CreditCardTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\InvalidCreditCardException
+     * @expectedException \Compay\Common\Exception\InvalidCreditCardException
      * @expectedExceptionMessage The expiryYear parameter is required
      */
     public function testValidateExpiryYearRequired()
@@ -86,7 +86,7 @@ class CreditCardTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\InvalidCreditCardException
+     * @expectedException \Compay\Common\Exception\InvalidCreditCardException
      * @expectedExceptionMessage Card has expired
      */
     public function testValidateExpiryDate()
@@ -96,7 +96,7 @@ class CreditCardTest extends TestCase
     }
 
     /**
-     * @expectedException \Omnipay\Common\Exception\InvalidCreditCardException
+     * @expectedException \Compay\Common\Exception\InvalidCreditCardException
      * @expectedExceptionMessage Card number is invalid
      */
     public function testValidateNumber()
@@ -661,7 +661,7 @@ class CreditCardTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidCreditCardException
+     * @expectedException Compay\Common\Exception\InvalidCreditCardException
      * @expectedExceptionMessage Card number is invalid
      */
     public function testInvalidLuhn()
@@ -671,7 +671,7 @@ class CreditCardTest extends TestCase
     }
 
     /**
-     * @expectedException Omnipay\Common\Exception\InvalidCreditCardException
+     * @expectedException Compay\Common\Exception\InvalidCreditCardException
      * @expectedExceptionMessage Card number should have 12 to 19 digits
      */
     public function testInvalidShortCard()

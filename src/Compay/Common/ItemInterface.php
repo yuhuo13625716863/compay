@@ -3,13 +3,13 @@
  * Cart Item interface
  */
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 /**
  * Cart Item interface
  *
  * This interface defines the functionality that all cart items in
- * the Omnipay system are to have.
+ * the Compay system are to have.
  */
 interface ItemInterface
 {

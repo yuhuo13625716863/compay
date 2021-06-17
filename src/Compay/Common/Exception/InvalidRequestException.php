@@ -1,12 +1,12 @@
 <?php
 
-namespace Omnipay\Common\Exception;
+namespace Compay\Common\Exception;
 
 /**
  * Invalid Request Exception
  *
  * Thrown when a request is invalid or missing required fields.
  */
-class InvalidRequestException extends \Exception implements OmnipayException
+class InvalidRequestException extends \Exception implements CompayException
 {
 }

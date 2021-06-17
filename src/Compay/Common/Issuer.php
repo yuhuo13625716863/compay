@@ -3,13 +3,13 @@
  * Issuer
  */
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
 /**
  * Issuer
  *
  * This class abstracts some functionality around card issuers used in the
- * Omnipay system.
+ * Compay system.
  */
 class Issuer
 {

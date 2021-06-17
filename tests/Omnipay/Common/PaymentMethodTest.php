@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\Common;
+namespace Compay\Common;
 
-use Omnipay\Tests\TestCase;
+use Compay\Tests\TestCase;
 
 class PaymentMethodTest extends TestCase
 {
