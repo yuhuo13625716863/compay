@@ -1,16 +1,16 @@
 {
-    "name": "yuhuo/alipay-com",
+    "name": "yuhuo/compay",
     "type": "library",
-    "description": "Common components for Compay payment processing library",
+    "description": "Common components for compay payment processing library",
     "keywords": [
         "gateway",
         "merchant",
-        "Compay",
+        "compay",
         "pay",
         "payment",
         "purchase"
     ],
-    "homepage": "https://github.com/yuhuo13625716863/alipay-com.git",
+    "homepage": "https://github.com/yuhuo13625716863/compay.git",
     "license": "MIT",
     "authors": [
         {
