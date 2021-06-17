@@ -10,7 +10,7 @@
          stopOnFailure="false"
          syntaxCheck="false">
     <testsuites>
-        <testsuite name="Alipay Test Suite">
+        <testsuite name="Compay Test Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

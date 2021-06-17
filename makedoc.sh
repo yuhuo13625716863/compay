@@ -5,7 +5,7 @@ mkdir -p ./documents/apigen
 
 if [ -z "$1" ]; then
     apigen generate \
-    --title 'Onmipay Common API documentation' \
+    --title 'Compay Common API documentation' \
     --source ./src \
     --destination ./documents/apigen
 
